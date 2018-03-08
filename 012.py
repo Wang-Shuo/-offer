@@ -23,7 +23,7 @@ class Solution:
 		if row >= 0 and row < rows and col >= 0 and col < cols and \
 		   matrix[row * cols + col] == str_path[pathLength] and \
 		   not visited[row * cols + col]:
-		   
+
 		    pathLength += 1
 		    visited[row * cols + col] = 1
 
@@ -48,4 +48,3 @@ result3 = s.hasPath('abtg', 1, 4, 'abtg')
 print(result1)
 print(result2)
 print(result3)
-
