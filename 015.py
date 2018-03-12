@@ -34,6 +34,8 @@ class Solution:
 # test
 s = Solution()
 print(s.NumOf1(1))
+print(s.NumOf1(3))
 print(s.NumOf1(-1))
+print(s.NumOf1(-2))
 print(s.PowerOf2(64))
 print(s.MToN(10, 13))
