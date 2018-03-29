@@ -23,6 +23,29 @@ class Solution:
 
         return result
 
+    def PrintFromTopToBottomInLines(self, root):
+        if not root:
+            return
+
+        queue = []
+        nextLevel = 0
+        toBePrinted = 1
+        queue.append(root)
+        while len(queue) > 0:
+            pNode = queue.pop(0)
+            print(pNode.val, end=' ')
+            if pNode.left:
+                queue.append(pNode.left)
+                nextLevel += 1
+            if pNode.right:
+                queue.append(pNode.right)
+                nextLevel += 1
+            toBePrinted -= 1
+            if toBePrinted == 0:
+                print(' ')
+                toBePrinted = nextLevel
+                nextLevel = 0
+
 
 # test
 root = TreeNode(8)
@@ -40,3 +63,4 @@ node2.left = node5
 node2.right = node6
 s = Solution()
 print(s.PrintFromTopToBottom(root))
+s.PrintFromTopToBottomInLines(root)
