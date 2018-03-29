@@ -47,6 +47,34 @@ class Solution:
                 nextLevel = 0
 
 
+    def PrintZigZag(self, root):
+        if not root:
+            return
+
+        result, nodes = [], [root]
+        right = True
+        while nodes:
+            curStack, nextStack = [], []
+            if right:
+                for node in nodes:
+                    curStack.append(node.val)
+                    if node.left:
+                        nextStack.append(node.left)
+                    if node.right:
+                        nextStack.append(node.right)
+            else:
+                for node in nodes:
+                    curStack.append(node.val)
+                    if node.right:
+                        nextStack.append(node.right)
+                    if node.left:
+                        nextStack.append(node.left)
+            nextStack.reverse()
+            right = not right
+            result.append(curStack)
+            nodes = nextStack
+        return result
+
 # test
 root = TreeNode(8)
 node1 = TreeNode(6)
@@ -63,4 +91,5 @@ node2.left = node5
 node2.right = node6
 s = Solution()
 print(s.PrintFromTopToBottom(root))
-s.PrintFromTopToBottomInLines(root)
+#s.PrintFromTopToBottomInLines(root)
+print(s.PrintZigZag(root))
