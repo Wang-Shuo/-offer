@@ -31,21 +31,21 @@ class Solution:
 
 
 # test
-root = TreeNode(1)
-node1 = TreeNode(2)
-node2 = TreeNode(3)
-node3 = TreeNode(4)
-node4 = TreeNode(5)
-node5 = TreeNode(6)
+# root = TreeNode(1)
+# node1 = TreeNode(2)
+# node2 = TreeNode(3)
+# node3 = TreeNode(4)
+# node4 = TreeNode(5)
+# node5 = TreeNode(6)
 
-root.left = node1
-root.right = node2
-node1.left = node3
-node2.left = node4
-node2.right = node5
+# root.left = node1
+# root.right = node2
+# node1.left = node3
+# node2.left = node4
+# node2.right = node5
 
 s = Solution()
-print(s.Serialize(root))
+# print(s.Serialize(root))
 ss = '1,2,4,#,#,#,3,5,#,#,6,#,#'
-root1 = s.Deserialize(ss)
-print(s.Serialize(root1))
+root = s.Deserialize(ss)
+print(s.Serialize(root))
