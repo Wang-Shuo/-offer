@@ -15,6 +15,21 @@ class Solution:
                 return c
 
 
+class Solution2:
+    def __init__(self):
+        self.s = ""
+    
+    def FirstNotRepeatingChar(self):
+        array = list(self.s)
+        for c in array:
+            if array.count(c) == 1:
+                return c
+        return '#'
+
+    def Insert(self, char):
+        self.s += char
+
+
 # test 
 s = Solution()
 print(s.FirstNotRepeatingChar('abaccdeff'))
