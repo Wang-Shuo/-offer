@@ -74,8 +74,28 @@ class Solution:
         return -1
 
 
+    def GetNumberSameAsIndex(self, numbers, length):
+        if not numbers or length <= 0:
+            return -1
+        
+        left = 0
+        right = length - 1
+        while left <= right:
+            middle = left + ((right - left) >> 1)
+            if numbers[middle] == middle:
+                return middle
+            
+            if numbers[middle] > middle:
+                right = middle - 1
+            else:
+                left = middle + 1
+
+        return -1
+
+
 
 # test
 s = Solution()
 print(s.GetNumberOfK([1, 2, 3, 3, 3, 3, 4, 5], 8, 3)) 
 print(s.GetMissingNumber([0, 1, 2, 4], 4))
+print(s.GetNumberSameAsIndex([-3, 1, 3, 4, 5], 5))
