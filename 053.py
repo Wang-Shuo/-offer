@@ -53,6 +53,29 @@ class Solution:
         return number
 
 
+    def GetMissingNumber(self, numbers, length):
+        if not numbers or length <= 0:
+            return -1
+        
+        left = 0
+        right = length - 1
+        while left <= right:
+            middle = (right + left) >> 1
+            if numbers[middle] != middle:
+                if middle == 0 or numbers[middle - 1] == middle - 1:
+                    return middle
+                right = middle - 1
+            else:
+                left = middle + 1
+
+        if left == length:
+            return length
+
+        return -1
+
+
+
 # test
 s = Solution()
-print(s.GetNumberOfK([1, 2, 3, 3, 3, 3, 4, 5], 8, 3))                                                                                                                                                                               
+print(s.GetNumberOfK([1, 2, 3, 3, 3, 3, 4, 5], 8, 3)) 
+print(s.GetMissingNumber([0, 1, 2, 4], 4))
