@@ -17,6 +17,33 @@ class Solution:
                 behind += 1
 
 
+    def FindContinuousSequence(self, sum):
+        if sum < 3:
+            return
+        small = 1
+        big = 2
+        result = []
+        middle = (1 + sum) / 2
+        curSum = small + big
+        while small < middle:
+            if curSum == sum:
+                result.append([i for i in range(small, big + 1)])
+
+            while curSum > sum and small < middle:
+                curSum -= small
+                small += 1
+            
+                if curSum == sum:
+                    result.append([i for i in range(small, big + 1)])
+
+            big += 1
+            curSum += big
+
+        return result
+
+
 # test
 s = Solution()
 print(s.FindNumbersWithSum([1, 2, 4, 7, 11, 15], 15))
+print(s.FindNumbersWithSum([1, 2, 4, 7], 10))
+print(s.FindContinuousSequence(15))
