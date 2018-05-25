@@ -1,4 +1,10 @@
 # -*- coding:utf-8 -*-
+
+"""
+题目一：找出数组中重复的数字
+Solution1： 
+"""
+
 class Solution1:
     def duplicate(self, numbers, duplication):
         if numbers is None or len(numbers) <= 0:
