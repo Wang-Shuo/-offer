@@ -10,3 +10,13 @@
     - [回文链表判断](LinkedList/回文链表判断.ipynb)
     - [两个链表的操作](LinkedList/两个链表的操作.ipynb)
     - [链表节点次序的调整](LinkedList/链表节点次序的调整.ipynb)
+
+
+- [Array](Array)
+    - [数组中和为特定值的数字](Array/数组中和为特定值的数字.ipynb)
+    - [数组中数字出现的次数](Array/数组中数字出现的次数.ipynb)
+    - [数组中的逆序对](Array/数组中的逆序对.ipynb)
+    - [数组中重复的数字](Array/数组中重复的数字.ipynb)
+    - [数组元素顺序调整](Array/数组元素顺序调整.ipynb)
+    - [最小的k个数](Array/最小的k个数.ipynb)
+    - [最小的k个数](Array/最小的k个数.ipynb)
