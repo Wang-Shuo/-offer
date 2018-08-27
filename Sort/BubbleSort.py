@@ -1,28 +1,26 @@
 # three methods to implement bubble sort.
 
-def BubbleSort1(Array):
-    length = len(Array)
+def BubbleSort1(A):
+    n = len(A)
 
-    for i in range(length):
-        for j in range(1, length-i):
-            if Array[j-1] > Array[j]:
-                Array[j-1], Array[j] = Array[j], Array[j-1]
+    for i in range(n-1, -1, -1):
+        for j in range(i):
+            if A[j] > A[j+1]:
+                A[j], A[j+1] = A[j+1], A[j] 
 
 
-def BubbleSort2(Array):
-    length = len(Array)
 
-    flag = True
-    k = length
+def BubbleSort2(A):
+    n = len(A)
 
-    while flag:
-        flag = False
-        for i in range(1, k):
-            if Array[i-1] > Array[i]:
-                Array[i-1], Array[i] = Array[i], Array[i-1]
-                flag = True
-        k -= 1
-
+    for i in range(n-1, -1, -1):
+        flag = 0
+        for j in range(i):
+            if A[j] > A[j+1]:
+                A[j], A[j+1] = A[j+1], A[j]
+                flag = 1
+        if flag == 0:
+            break
 
 
 def BubbleSort3(Array):
@@ -41,6 +39,6 @@ def BubbleSort3(Array):
 # test
 Array = [2, 5, 1, 3, 6, 8, 7]
 #BubbleSort1(Array)
-#BubbleSort2(Array)
-BubbleSort3(Array)
+BubbleSort2(Array)
+#BubbleSort3(Array)
 print(Array)

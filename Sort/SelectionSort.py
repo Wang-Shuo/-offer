@@ -1,14 +1,14 @@
-def SelectionSort(Array):
-    length = len(Array)
 
-    for i in range(length):
+def SelectionSort(A):
+    n = len(A)
+
+    for i in range(n):
         minIdx = i
-        for j in range(i+1, length):
-            if Array[j] < Array[minIdx]:
+        for j in range(i+1, n):
+            if A[j] < A[minIdx]:
                 minIdx = j
         
-        Array[i], Array[minIdx] = Array[minIdx], Array[i]
-
+        A[i], A[minIdx] = A[minIdx], A[i]
 
 # test
 Array = [2, 4, 1, 5, 6, 8, 7]
