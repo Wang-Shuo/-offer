@@ -43,10 +43,15 @@ class Solution:
                     bitSum[i] += 1
                 bitMask = bitMask << 1
 
+        print(bitSum)
         result = 0
         for j in range(32):
             result = result << 1
             result += bitSum[j] % 3
+
+        # consider negative number
+        if result >= 2 ** 31:
+            result -= 2 ** 32
 
         return result
 
@@ -54,5 +59,6 @@ class Solution:
 
 # test 
 s = Solution()
-print(s.FindNumsAppearOnce([2, 4, 3, 6, 3, 2, 5, 5]))
-print(s.FindNumberAppearingOnce([3, 1, 3, 3, 2, 2, 2]))
+#print(s.FindNumsAppearOnce([2, 4, 3, 6, 3, 2, 5, 5]))
+#print(s.FindNumberAppearingOnce([3, 1, 3, 3, 2, 2, 2]))
+print(s.FindNumberAppearingOnce([-2,-2,1,1,-3,1,-3,-3,-4,-2]))
