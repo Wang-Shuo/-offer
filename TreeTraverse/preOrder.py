@@ -8,7 +8,7 @@ def preOrderRecur(root):
     if not root:
         return
     
-    print root.val
+    print(root.val)
     preOrderRecur(root.left)
     preOrderRecur(root.right)
 
@@ -20,7 +20,7 @@ def preOrderIter(root):
     node = root
     while node or stack:
         while node:
-            print node.val
+            print(node.val)
             stack.append(node)
             node = node.left
         node = stack.pop()

@@ -9,7 +9,7 @@ def inOrderRecur(root):
         return
     
     inOrderRecur(root.left)
-    print root.val
+    print(root.val)
     inOrderRecur(root.right)
 
 
@@ -24,5 +24,5 @@ def inOrderIter(root):
             stack.append(node)
             node = node.left
         node = stack.pop()
-        print node.val
+        print(node.val)
         node = node.right

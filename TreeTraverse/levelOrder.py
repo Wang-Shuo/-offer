@@ -13,7 +13,7 @@ def levelOrder(root):
     queue.append(node)
     while queue:
         node = queue.pop(0)
-        print node.val
+        print(node.val)
         if node.left:
             queue.append(node.left)
         if node.right:

@@ -11,7 +11,7 @@ def postOrderRecur(root):
     
     postOrderRecur(root.left)
     postOrderRecur(root.right)
-    print root.val
+    print(root.val)
 
 
 def postOrderIter(root):
@@ -30,4 +30,4 @@ def postOrderIter(root):
             stack1.append(node.right)
         stack2.append(node)
     while stack2:
-        print stack2.pop().val
+        print(stack2.pop().val)
